@@ -3,8 +3,8 @@
 It's a personal study notes for sci-fi wriiting. I hope it can work like a systematic knowledge library(or warehouse). I'm also interest in considering make some concepts visualize, like general relativity.
 
 
-目前学习方向集中在物理学+计算机，笔记用$$\LaTeX$$写，没记错的话$$\LaTeX$$也是manim的文本格式。
-The study intention focus on physics and computer-science, notes is writed by $$\LaTeX$$ which also the manim's text formatting if I remember.
+目前学习方向集中在物理学+计算机，笔记用aTeX写，没记错的话LaTeX也是manim的文本格式。
+The study intention focus on physics and computer-science, notes is writed by LaTeX which also the manim's text formatting if I remember.
 
 
 参考书目：
