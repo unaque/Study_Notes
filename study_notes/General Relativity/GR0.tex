@@ -1,0 +1,103 @@
+\documentclass[fontset=windows]{article}
+\usepackage[margin=1in]{geometry}%设置边距，符合Word设定
+\usepackage{ctex}
+\usepackage{setspace}
+\usepackage{lipsum}
+\usepackage{graphicx}%插入图片
+\usepackage{amsmath}
+
+\usepackage{hyperref} % 对目录生成链接，注：该宏包可能与其他宏包冲突，故放在所有引用的宏包之后
+\hypersetup{colorlinks = true,  % 将链接文字带颜色
+	bookmarksopen = true, % 展开书签
+	bookmarksnumbered = true, % 书签带章节编号
+	pdftitle = This is a testfile for vscode, % 标题
+	pdfauthor =Ali-loner} % 作者
+\bibliographystyle{plain}% 参考文献引用格式
+\newcommand{\upcite}[1]{\textsuperscript{\cite{#1}}}
+
+\renewcommand{\contentsname}{\centerline{Contents}} %经过设置word格式后，将目录标题居中
+
+
+\title{\heiti\zihao{2} 广义相对论学习笔记（day0）}
+\author{\songti pupllen}
+\date{\today}
+
+\begin{document}
+	\maketitle
+我们首先从数学上，从狭义相对论的条件中引入定义。
+
+首先定义的相对论中的一个几何概念（亦即研究对象）是时空，即数学定义为：
+
+Spacetime is a manifold of events that endowed with a  metric.
+
+时空是事件有度规的流形
+
+这个定义又由3个概念组成，它们分别定义为:
+
+流形（manifold）: A set of points with well-understood connectedness properties.
+
+一组符合某种物理前提的点集，有良好的连通性。
+
+事件（events）: Where and when something happens, usually we label it with coordinates.
+
+时空中的点，一般写为一组坐标。
+
+度规（metric）: A notion of distance between events.
+
+描述时空中点之间的几何关系（通常是距离）的物理量。
+
+\hspace*{\fill}
+
+有了这些基本概念，我们接下来便讨论最简单的一种情况：没有引力的时空。
+
+为了方便讨论，接下来我们只用正交（orthogonal）的坐标系。
+
+这个时空的事件可以写为一组四维坐标，即
+$(t,x,y,z)$，表示时间的$t$与位置的三维向量$\vec{x} = (x,y,z)$。
+
+\hspace*{\fill}
+
+现在我们假设时空中有两个事件，即$(t_1,x_1,y_1,z_1)$和$(t_2,x_2,y_2,z_2)$。%其中$\vec{x_1} \neq \vec{x_2}$
+
+假设在某个时刻，事件1的位置向事件2的位置发射了一束光，在位置2接收到这束光时，又将其反射回位置1。记发射时$t_1 = t_{1e}$，接收到反射光时$t_1 = t_{1r}$，而位置2反射时为$t_2 = t_{2b}$。由于我们讨论的是没有引力的情况，因此在惯性参考系下（inertial frame）
+狭义相对论的光速不变假设意味着，如果一开始时且有$t_1 = t_2 = 0$，则下式成立：
+\begin{equation}
+	t_{2b} = \frac{1}{2}(t_{1e}+t_{1r})
+\end{equation}
+通过这样的方式，我们实际上是校准了2个时钟。
+
+有了时间，配合上原本一般坐标系的表示距离的方式，我们可以定义事件关于时空的距离（spacetime interval）：
+\begin{equation}
+	s^2 = -(c\Delta t)^2 + (\Delta x)^2 + (\Delta y)^2 + (\Delta z)^2
+\end{equation}
+我们会看到，其中$c$为光速这件事和时空距离在惯性坐标系中不变是等价的，或者更一般地说，存在一个将时间和空间相互转换的固定因子，当其为光速时，时空距离在惯性坐标系中不变。
+
+现在需要引入一些方便的记号，也是之后广义相对论主要使用的，记：
+\begin{equation*}
+	x^\mu  \Rightarrow \mu \in (t,x,y,z) \,\text{or}\, (0,1,2,3)
+\end{equation*}
+且
+\begin{equation*}
+	c = 1
+\end{equation*}
+因此我们可以写出一种表示时空距离更紧凑的形式，即利用矩阵（度规）的形式，引入：
+\begin{equation}
+	\eta_{\mu\nu} = 
+	\left(
+	\begin{array}{cccc}
+		-1 & 0 & 0 & 0 \\
+		0 & 1 & 0 & 0 \\
+		0 & 0 & 1 & 0 \\
+		0 & 0 & 0 & 1 \\
+	\end{array}
+	\right)
+\end{equation}
+那么时空距离就可以写为：
+\begin{equation}
+	s^2 = \eta_{\mu\nu}\Delta x^{\mu}\Delta x^{\nu}
+\end{equation}
+这里使用了爱因斯坦约定求和：对重复出现的指标时，式子自动对指标依次求和。
+
+
+
+\end{document}

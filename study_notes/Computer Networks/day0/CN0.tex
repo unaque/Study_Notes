@@ -1,0 +1,66 @@
+\documentclass[fontset=windows]{article}
+\usepackage[margin=1in]{geometry}%设置边距，符合Word设定
+\usepackage{ctex}
+\usepackage{setspace}
+\usepackage{lipsum}
+\usepackage{graphicx}%插入图片
+
+\usepackage{hyperref} % 对目录生成链接，注：该宏包可能与其他宏包冲突，故放在所有引用的宏包之后
+\hypersetup{colorlinks = true,  % 将链接文字带颜色
+	bookmarksopen = true, % 展开书签
+	bookmarksnumbered = true, % 书签带章节编号
+	pdftitle = This is a testfile for vscode, % 标题
+	pdfauthor =Ali-loner} % 作者
+\bibliographystyle{plain}% 参考文献引用格式
+\newcommand{\upcite}[1]{\textsuperscript{\cite{#1}}}
+
+\renewcommand{\contentsname}{\centerline{Contents}} %经过设置word格式后，将目录标题居中
+
+
+\title{\heiti\zihao{2} 计算机网络学习笔记（day0）}
+\author{\songti pupllen}
+\date{\today}
+
+\begin{document}
+	\maketitle
+	互联网指的是计算机的网络和网络之间的链接，计算机网络则是由层次结构而成的，称为
+
+	开放式系统互联模型（Open System Interconnection Model）简称OSI模型。
+	
+	从上至下依次是：
+	
+	应用层（Application）
+	
+	表示层（Presentation）
+	
+	会话层（Session）
+	
+	传输层（Transport）
+	
+	网络层（Network）
+	
+	数据链路层（Data Link）
+	
+	物理层（Physical）
+	
+	第一节：
+	
+	什么是互联网，首先要讲讲什么是网络。
+	
+	简单从数学上讲，由节点和边组成的图网即可称为网络，而具体到计算机网络中，有多种节点和边，以及关于这些节点和边的“标准”，即协议（protocol）。例如，节点可以代表主机及其运行的应用程序，或者路由器、交换机等网络交换设备，而边可以是主机链接到互联网的链路（接入网链路），抑或是主干路链路（路由器间的链路）等等，而协议要看具体是网络的那一层，不同层是相互独立的，因此协议分成几个层次进行定义。
+	
+	有了网络的基本概念，互联网的概念便顺应而生。
+	
+	概括地讲，互联网即是，一簇以TCP和RCP为主的协议支撑其工作的网络。
+	
+	从具体构成的方面来说，互联网往往由：计算设备，通信链路和分组交换设备组成，由协议控制消息的收发。由一堆网络由网络交换设备链接在一起（网络的网络）。
+	
+	而互联网的协议是由RFC文档（Request for comments）发展而来，这些文档会发送到一个称为IETF（Internet Engineering Task Force）的地方并编号，供全球所有工程师，科学家等等访问。
+	
+	网络协议一般包括如下规范：语法，语义，时序，动作。（报文，次序，动作）
+	
+	从用户服务的角度来说，计算机网络由分布式应用以及通信基础设施组成，分布式应用利用基础设施进行通信，基础设施将分布式应用链接起来，并提供网络服务。亦即，基础设施为apps提供网络服务的api。
+	
+	例如，如果基础设施的协议是UDP协议（User Datagram Protocol），那么这个网络的服务可以称为无连接不可靠服务，其优点是开销小，而如果是TCP协议（Transmission Control Protocol），则称为面向链接的可靠服务，其开销较大。
+    
+\end{document}
